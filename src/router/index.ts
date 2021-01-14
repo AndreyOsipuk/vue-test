@@ -1,23 +1,53 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Realty",
+    component: () => import("../views/Realty.vue")
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/add",
+    name: "Add Realty",
+    component: () => import("../views/AddRealty.vue")
+  },
+  {
+    path: "/edit",
+    name: "Edit",
+    component: () => import("../views/EditRealty.vue")
+  },
+  {
+    path: "/users",
+    name: "Users",
+    component: () => import("../views/Users.vue")
+  },
+  {
+    path: "/adduser",
+    name: "Add user",
+    component: () => import("../views/AddUser.vue")
+  },
+  {
+    path: "/edituser",
+    name: "Edit user",
+    component: () => import("../views/EditUser.vue")
+  },
+  {
+    path: "/rent",
+    name: "Rent",
+    component: () => import("../views/Rent.vue")
+  },
+  {
+    path: "/addrent",
+    name: "Add rent",
+    component: () => import("../views/AddRent.vue")
+  },
+  {
+    path: "/editrent",
+    name: "Edit Rent",
+    component: () => import("../views/EditRent.vue")
   }
 ];
 
